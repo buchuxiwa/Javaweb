@@ -11,7 +11,7 @@ SELECT first_name,last_name,email,job_title
 FROM employees
 ```
 
-![image-20241010105122242](./image-20241010105122242.png)
+![image-20241010105122242](./imgs/image-20241010105122242.png)
 
 ##### 2.查询所有部门的名称和位置。
 
