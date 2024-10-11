@@ -1,6 +1,4 @@
----
-typora-root-url: ./imgs
----
+
 
 ### 员工信息练习题
 
@@ -20,7 +18,7 @@ SELECT dept_name,location
 FROM departments
 ```
 
-![image-20241010105407180](./image-20241010105407180.png)
+![image-20241010105407180](./imgs/image-20241010105407180.png)
 
 ##### 3. 查询工资超过70000的员工姓名和工资。
 
@@ -30,7 +28,7 @@ FROM employees
 WHERE salary > 70000
 ```
 
-![image-20241010111023937](./image-20241010111023937.png)
+![image-20241010111023937](./imgs/image-20241010111023937.png)
 
 ##### 4. 查询IT部门的所有员工。
 
@@ -41,7 +39,7 @@ NATURAL JOIN departments
 WHERE dept_name = 'IT'
 ```
 
-![image-20241010111144674](./image-20241010111144674.png)
+![image-20241010111144674](./imgs/image-20241010111144674.png)
 
 ##### 5. 查询入职日期在2020年之后的员工信息。
 
@@ -51,7 +49,7 @@ FROM employees
 WHERE hire_date > '2019-12-31'
 ```
 
-![image-20241010111419978](./image-20241010111419978.png)
+![image-20241010111419978](./imgs/image-20241010111419978.png)
 
 ##### 6. 计算每个部门的平均工资。
 
@@ -62,7 +60,7 @@ NATURAL JOIN departments
 GROUP BY dept_id
 ```
 
-![image-20241010111845231](./image-20241010111845231.png)
+![image-20241010111845231](./imgs/image-20241010111845231.png)
 
 ##### 7. 查询工资最高的前3名员工信息。
 
@@ -73,7 +71,7 @@ ORDER BY salary DESC
 LIMIT 3
 ```
 
-![image-20241010112128371](./image-20241010112128371.png)
+![image-20241010112128371](./imgs/image-20241010112128371.png)
 
 ##### 8. 查询每个部门员工数量。
 
@@ -86,7 +84,7 @@ GROUP BY dept_id
 
 
 
-![image-20241010112403106](./image-20241010112403106.png)
+![image-20241010112403106](./imgs/image-20241010112403106.png)
 
 ##### 9. 查询没有分配部门的员工。
 
@@ -96,7 +94,7 @@ FROM employees
 WHERE dept_id IS NULL
 ```
 
-![image-20241010112532481](./image-20241010112532481.png)
+![image-20241010112532481](./imgs/image-20241010112532481.png)
 
 ##### 10. 查询参与项目数量最多的员工。
 
@@ -115,7 +113,7 @@ HAVING COUNT(*) = (
 )
 ```
 
-![image-20241010122308288](./image-20241010122308288.png)
+![image-20241010122308288](./imgs/image-20241010122308288.png)
 
 ##### 11. 计算所有员工的工资总和。
 
@@ -124,7 +122,7 @@ SELECT SUM(salary)
 FROM employees
 ```
 
-![image-20241010122519778](./image-20241010122519778.png)
+![image-20241010122519778](./imgs/image-20241010122519778.png)
 
 ##### 12. 查询姓"Smith"的员工信息。
 
@@ -134,7 +132,7 @@ FROM employees
 WHERE last_name = 'Smith'
 ```
 
-![image-20241010122731970](./image-20241010122731970.png)
+![image-20241010122731970](./imgs/image-20241010122731970.png)
 
 ##### 13. 查询即将在半年内到期的项目。
 
@@ -144,7 +142,7 @@ FROM projects
 WHERE DATEDIFF(end_date,start_date) < 188
 ```
 
-![image-20241010123750570](./image-20241010123750570.png)
+![image-20241010123750570](./imgs/image-20241010123750570.png)
 
 ##### 14. 查询至少参与了两个项目的员工。
 
@@ -156,7 +154,7 @@ GROUP BY emp_id
 HAVING COUNT(project_id) >= 2
 ```
 
-![image-20241010124102425](./image-20241010124102425.png)
+![image-20241010124102425](./imgs/image-20241010124102425.png)
 
 ##### 15. 查询没有参与任何项目的员工。
 
@@ -169,7 +167,7 @@ WHERE emp_id NOT IN (
 )
 ```
 
-![image-20241010124326559](./image-20241010124326559.png)
+![image-20241010124326559](./imgs/image-20241010124326559.png)
 
 ##### 16. 计算每个项目参与的员工数量。
 
@@ -180,7 +178,7 @@ NATURAL JOIN projects
 GROUP BY project_id
 ```
 
-![image-20241010124634914](./image-20241010124634914.png)
+![image-20241010124634914](./imgs/image-20241010124634914.png)
 
 ##### 17. 查询工资第二高的员工信息。
 
@@ -201,7 +199,7 @@ WHERE salary = (
 )
 ```
 
-![image-20241010125342244](./image-20241010125342244.png)
+![image-20241010125342244](./imgs/image-20241010125342244.png)
 
 ##### 18. 查询每个部门工资最高的员工。
 
@@ -220,7 +218,7 @@ FROM rank_employee re
 WHERE re.salary_rank = 1
 ```
 
-![image-20241010144820531](./image-20241010144820531.png)
+![image-20241010144820531](./imgs/image-20241010144820531.png)
 
 ##### 19. 计算每个部门的工资总和,并按照工资总和降序排列。
 
@@ -232,7 +230,7 @@ GROUP BY d.dept_id
 ORDER BY SUM(salary) DESC
 ```
 
-![image-20241010145052386](./image-20241010145052386.png)
+![image-20241010145052386](./imgs/image-20241010145052386.png)
 
 ##### 20. 查询员工姓名、部门名称和工资。
 
@@ -242,7 +240,7 @@ FROM employees
 NATURAL JOIN departments
 ```
 
-![image-20241010145245783](./image-20241010145245783.png)
+![image-20241010145245783](./imgs/image-20241010145245783.png)
 
 ##### 21. 查询每个员工的上级主管(假设emp_id小的是上级)。
 
@@ -255,7 +253,7 @@ WHERE e.dept_id =  m.dept_id AND
 			e.emp_id < m.emp_id
 ```
 
-![image-20241010160228949](./image-20241010160228949.png)
+![image-20241010160228949](./imgs/image-20241010160228949.png)
 
 ##### 22. 查询所有员工的工作岗位,不要重复。
 
@@ -264,7 +262,7 @@ SELECT CONCAT(first_name," ",last_name) employee_name,job_title
 FROM employees
 ```
 
-![image-20241010153915827](./image-20241010153915827.png)
+![image-20241010153915827](./imgs/image-20241010153915827.png)
 
 ##### 23. 查询平均工资最高的部门。
 
@@ -285,7 +283,7 @@ NATURAL JOIN departments
 WHERE dsr.salary_rank = 1
 ```
 
-![image-20241010153941108](./image-20241010153941108.png)
+![image-20241010153941108](./imgs/image-20241010153941108.png)
 
 ##### 24. 查询工资高于其所在部门平均工资的员工。
 
@@ -300,7 +298,7 @@ JOIN (
 WHERE salary > avg_salary
 ```
 
-![image-20241010154507323](./image-20241010154507323.png)
+![image-20241010154507323](./imgs/image-20241010154507323.png)
 
 ##### 25. 查询每个部门工资前两名的员工。
 
@@ -317,7 +315,7 @@ JOIN employees e ON e.emp_id = re.emp_id
 WHERE re.salary_rank = 1
 ```
 
-![image-20241010154851854](./image-20241010154851854.png)
+![image-20241010154851854](./imgs/image-20241010154851854.png)
 
 ### 学生选课题
 
@@ -328,7 +326,7 @@ SELECT *
 FROM student
 ```
 
-![image-20241010161113475](./image-20241010161113475.png)
+![image-20241010161113475](./imgs/image-20241010161113475.png)
 
 ##### 2. 查询所有课程的信息。
 
@@ -337,7 +335,7 @@ SELECT *
 FROM course
 ```
 
-![image-20241010161312899](./image-20241010161312899.png)
+![image-20241010161312899](./imgs/image-20241010161312899.png)
 
 ##### 3.查询所有学生的姓名、学号和班级。
 
@@ -346,7 +344,7 @@ SELECT name,student_id,my_class
 FROM student
 ```
 
-![image-20241010161424319](./image-20241010161424319.png)
+![image-20241010161424319](./imgs/image-20241010161424319.png)
 
 ##### 4. 查询所有教师的姓名和职称。
 
@@ -355,7 +353,7 @@ SELECT name,title
 FROM teacher
 ```
 
-![image-20241010161529441](./image-20241010161529441.png)
+![image-20241010161529441](./imgs/image-20241010161529441.png)
 
 ##### 5. 查询不同课程的平均分数。
 
@@ -366,7 +364,7 @@ JOIN score WHERE course.course_id = score.course_id
 GROUP BY course.course_id
 ```
 
-![image-20241010161715913](./image-20241010161715913.png)
+![image-20241010161715913](./imgs/image-20241010161715913.png)
 
 ##### 6. 查询每个学生的平均分数。
 
@@ -377,7 +375,7 @@ NATURAL JOIN score
 GROUP BY student_id
 ```
 
-![image-20241010161833861](./image-20241010161833861.png)
+![image-20241010161833861](./imgs/image-20241010161833861.png)
 
 ##### 7. 查询分数大于85分的学生学号和课程号。
 
@@ -387,7 +385,7 @@ FROM score
 WHERE score>85
 ```
 
-![image-20241010161930901](./image-20241010161930901.png)
+![image-20241010161930901](./imgs/image-20241010161930901.png)
 
 ##### 8. 查询每门课程的选课人数。
 
@@ -398,7 +396,7 @@ NATURAL JOIN score
 GROUP BY course_id
 ```
 
-![image-20241010162523498](./image-20241010162523498.png)
+![image-20241010162523498](./imgs/image-20241010162523498.png)
 
 ##### 9. 查询选修了"高等数学"课程的学生姓名和分数。
 
@@ -410,7 +408,7 @@ NATURAL JOIN course
 WHERE course_name = "高等数学"
 ```
 
-![image-20241010162723369](./image-20241010162723369.png)
+![image-20241010162723369](./imgs/image-20241010162723369.png)
 
 ##### 10. 查询没有选修"大学物理"课程的学生姓名。
 
@@ -426,7 +424,7 @@ WHERE s1.name NOT IN(
 )
 ```
 
-![image-20241010163019441](./image-20241010163019441.png)
+![image-20241010163019441](./imgs/image-20241010163019441.png)
 
 ##### 11. 查询C001比C002课程成绩高的学生信息及课程分数。
 
@@ -446,7 +444,7 @@ JOIN (
 WHERE C1.C001score > C2.C002score
 ```
 
-![image-20241010194743672](./image-20241010194743672.png)
+![image-20241010194743672](./imgs/image-20241010194743672.png)
 
 ##### 12.统计各科成绩各分数段人数：课程编号，课程名称，[100-85]，[85-70]，[70-60]，[60-0] 及所占百分比
 
@@ -466,7 +464,7 @@ NATURAL JOIN course
 GROUP BY course_id
 ```
 
-![image-20241011083350589](./image-20241011083350589.png)
+![image-20241011083350589](./imgs/image-20241011083350589.png)
 
 ##### 13. 查询选择C002课程但没选择C004课程的成绩情况(不存在时显示为 null )。
 
@@ -485,7 +483,7 @@ WHERE student_id IN(
 )
 ```
 
-![image-20241011081514765](./image-20241011081514765.png)
+![image-20241011081514765](./imgs/image-20241011081514765.png)
 
 ##### 14. 查询平均分数最高的学生姓名和平均分数。
 
@@ -505,7 +503,7 @@ NATURAL JOIN student
 WHERE rs.score_rank = 1
 ```
 
-![image-20241011082150873](./image-20241011082150873.png)
+![image-20241011082150873](./imgs/image-20241011082150873.png)
 
 ##### 15. 查询总分最高的前三名学生的姓名和总分。
 
@@ -521,7 +519,7 @@ NATURAL JOIN student
 WHERE rs.score_rank <= 3
 ```
 
-![image-20241011084707483](./image-20241011084707483.png)
+![image-20241011084707483](./imgs/image-20241011084707483.png)
 
 ##### 16. 查询各科成绩最高分、最低分和平均分。要求如下：
 ##### 以如下形式显示：课程 ID，课程 name，最高分，最低分，平均分，及格率，中等率，优良率，优秀率
@@ -547,7 +545,7 @@ GROUP BY course_id
 ORDER BY number DESC,course_id
 ```
 
-![image-20241011093009031](./image-20241011093009031.png)
+![image-20241011093009031](./imgs/image-20241011093009031.png)
 
 ##### 17. 查询男生和女生的人数。
 
@@ -557,7 +555,7 @@ FROM student
 GROUP BY gender
 ```
 
-![image-20241011093123868](./image-20241011093123868.png)
+![image-20241011093123868](./imgs/image-20241011093123868.png)
 
 ##### 18. 查询年龄最大的学生姓名。
 
@@ -572,7 +570,7 @@ FROM ranked_student rs
 WHERE rs.birthday_rank = 1
 ```
 
-![image-20241011093351965](./image-20241011093351965.png)
+![image-20241011093351965](./imgs/image-20241011093351965.png)
 
 ##### 19. 查询年龄最小的教师姓名。
 
@@ -587,7 +585,7 @@ FROM ranked_teacher rt
 WHERE rt.birthday_rank = 1
 ```
 
-![image-20241011093552074](./image-20241011093552074.png)
+![image-20241011093552074](./imgs/image-20241011093552074.png)
 
 ##### 20. 查询学过「张教授」授课的同学的信息。
 
@@ -600,7 +598,7 @@ JOIN teacher t ON t.teacher_id = course.teacher_id
 WHERE t.name = "张教授"
 ```
 
-![image-20241011093934087](./image-20241011093934087.png)
+![image-20241011093934087](./imgs/image-20241011093934087.png)
 
 ##### 21. 查询查询至少有一门课与学号为"2021001"的同学所学相同的同学的信息 。
 
@@ -615,7 +613,7 @@ WHERE course_id IN (
 )AND student_id != "2021001"
 ```
 
-![image-20241011094337495](./image-20241011094337495.png)
+![image-20241011094337495](./imgs/image-20241011094337495.png)
 
 ##### 22. 查询每门课程的平均分数，并按平均分数降序排列。
 
@@ -627,7 +625,7 @@ GROUP BY course_id
 ORDER BY AVG(score) DESC
 ```
 
-![image-20241011094458814](./image-20241011094458814.png)
+![image-20241011094458814](./imgs/image-20241011094458814.png)
 
 ##### 23. 查询学号为"2021001"的学生所有课程的分数。
 
@@ -639,7 +637,7 @@ NATURAL JOIN student
 WHERE student_id = "2021001"
 ```
 
-![image-20241011094618196](./image-20241011094618196.png)
+![image-20241011094618196](./imgs/image-20241011094618196.png)
 
 ##### 24. 查询所有学生的姓名、选修的课程名称和分数。
 
@@ -650,7 +648,7 @@ NATURAL JOIN course
 NATURAL JOIN student
 ```
 
-![image-20241011094759526](./image-20241011094759526.png)
+![image-20241011094759526](./imgs/image-20241011094759526.png)
 
 ##### 25. 查询每个教师所教授课程的平均分数。
 
@@ -661,7 +659,7 @@ NATURAL JOIN course
 GROUP BY teacher_id
 ```
 
-![image-20241011095821994](./image-20241011095821994.png)
+![image-20241011095821994](./imgs/image-20241011095821994.png)
 
 ##### 26. 查询分数在80到90之间的学生姓名和课程名称。
 
@@ -673,7 +671,7 @@ NATURAL JOIN course
 WHERE score BETWEEN 80 AND 90
 ```
 
-![image-20241011095925962](./image-20241011095925962.png)
+![image-20241011095925962](./imgs/image-20241011095925962.png)
 
 ##### 27. 查询每个班级的平均分数。
 
@@ -684,7 +682,7 @@ NATURAL JOIN student
 GROUP BY my_class
 ```
 
-![image-20241011100049381](./image-20241011100049381.png)
+![image-20241011100049381](./imgs/image-20241011100049381.png)
 
 ##### 28. 查询没学过"王讲师"老师讲授的任一门课程的学生姓名。
 
@@ -700,7 +698,7 @@ WHERE student_id NOT IN(
 )
 ```
 
-![image-20241011100234567](./image-20241011100234567.png)
+![image-20241011100234567](./imgs/image-20241011100234567.png)
 
 ##### 29. 查询两门及其以上小于85分的同学的学号，姓名及其平均成绩 。
 
@@ -712,7 +710,7 @@ GROUP BY student_id
 HAVING COUNT(CASE WHEN score<85 THEN 1 ELSE 0 END) > 2
 ```
 
-![image-20241011100438320](./image-20241011100438320.png)
+![image-20241011100438320](./imgs/image-20241011100438320.png)
 
 ##### 30. 查询所有学生的总分并按降序排列。
 
@@ -723,7 +721,7 @@ GROUP BY student_id
 ORDER BY SUM(score) DESC
 ```
 
-![image-20241011100554698](./image-20241011100554698.png)
+![image-20241011100554698](./imgs/image-20241011100554698.png)
 
 ##### 31. 查询平均分数超过85分的课程名称。
 
@@ -735,7 +733,7 @@ GROUP BY course_id
 HAVING AVG(score)>85
 ```
 
-![image-20241011100649690](./image-20241011100649690.png)
+![image-20241011100649690](./imgs/image-20241011100649690.png)
 
 ##### 32. 查询每个学生的平均成绩排名。
 
@@ -749,7 +747,7 @@ SELECT student_id,score_rank
 FROM ranked_student
 ```
 
-![image-20241011100952049](./image-20241011100952049.png)
+![image-20241011100952049](./imgs/image-20241011100952049.png)
 
 ##### 33. 查询每门课程分数最高的学生姓名和分数。
 
@@ -767,7 +765,7 @@ NATURAL JOIN student
 WHERE rs.score_rank = 1
 ```
 
-![image-20241011101301883](./image-20241011101301883.png)
+![image-20241011101301883](./imgs/image-20241011101301883.png)
 
 ##### 34. 查询选修了"高等数学"和"大学物理"的学生姓名。
 
@@ -786,7 +784,7 @@ WHERE course_name = "高等数学" AND
 )
 ```
 
-![image-20241011101638134](./image-20241011101638134.png)
+![image-20241011101638134](./imgs/image-20241011101638134.png)
 
 ##### 35. 按平均成绩从高到低显示所有学生的所有课程的成绩以及平均成绩（没有选课则为空）。
 
@@ -797,7 +795,7 @@ GROUP BY course_id
 ORDER BY AVG(score) DESC
 ```
 
-![image-20241011102923633](./image-20241011102923633.png)
+![image-20241011102923633](./imgs/image-20241011102923633.png)
 
 ##### 36. 查询分数最高和最低的学生姓名及其分数。
 
@@ -815,7 +813,7 @@ NATURAL JOIN student
 WHERE rs.score_rank_high = 1 OR rs.score_rank_low = 1
 ```
 
-![image-20241011103837431](./image-20241011103837431.png)
+![image-20241011103837431](./imgs/image-20241011103837431.png)
 
 ##### 37. 查询每个班级的最高分和最低分。
 
@@ -826,7 +824,7 @@ NATURAL JOIN student
 GROUP BY my_class
 ```
 
-![image-20241011104039236](./image-20241011104039236.png)
+![image-20241011104039236](./imgs/image-20241011104039236.png)
 
 ##### 38. 查询每门课程的优秀率（优秀为90分）。
 
@@ -836,7 +834,7 @@ FROM score
 GROUP BY course_id
 ```
 
-![image-20241011104254327](./image-20241011104254327.png)
+![image-20241011104254327](./imgs/image-20241011104254327.png)
 
 ##### 39. 查询平均分数超过班级平均分数的学生。
 
@@ -850,7 +848,7 @@ HAVING score > avg(score)
 
 
 
-![image-20241011104644499](./image-20241011104644499.png)
+![image-20241011104644499](./imgs/image-20241011104644499.png)
 
 ##### 40. 查询每个学生的分数及其与课程平均分的差值。
 
@@ -864,4 +862,4 @@ JOIN(
 )AS course_avg ON course_avg.course_id = s1.course_id
 ```
 
-![image-20241011105926591](./image-20241011105926591.png)
+![image-20241011105926591](./imgs/image-20241011105926591.png)
