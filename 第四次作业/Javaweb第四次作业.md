@@ -1,8 +1,42 @@
+# 《实验四：sql操作练习》
 
 
-### 员工信息练习题
 
-##### 1.查询所有员工的姓名、邮箱和工作岗位。
+##### 学院：省级示范性软件学院
+
+
+
+##### 题目：《实验四：sql操作练习》
+
+
+
+##### 姓名：王承宸
+
+
+
+##### 学号：2100a60134
+
+
+
+##### 班级：软工2202
+
+
+
+##### 日期：2024-10-13
+
+
+
+**实验内容：**基本查询、表连接、子查询、聚合函数、排序、分组
+
+**实验目的：**通过大量的SQL练习，提高SQL技能
+
+**实验环境：**MySQL8
+
+
+
+## 一、员工信息练习题
+
+### 1.1 查询所有员工的姓名、邮箱和工作岗位。
 
 ```mysql
 SELECT first_name,last_name,email,job_title
@@ -11,7 +45,7 @@ FROM employees
 
 ![image-20241010105122242](./imgs/image-20241010105122242.png)
 
-##### 2.查询所有部门的名称和位置。
+### 1.2 查询所有部门的名称和位置。
 
 ```mysql
 SELECT dept_name,location
@@ -20,7 +54,7 @@ FROM departments
 
 ![image-20241010105407180](./imgs/image-20241010105407180.png)
 
-##### 3. 查询工资超过70000的员工姓名和工资。
+### 1.3 查询工资超过70000的员工姓名和工资。
 
 ``` mysql
 SELECT first_name,last_name,salary
@@ -30,7 +64,7 @@ WHERE salary > 70000
 
 ![image-20241010111023937](./imgs/image-20241010111023937.png)
 
-##### 4. 查询IT部门的所有员工。
+### 1.4 查询IT部门的所有员工。
 
 ```mysql
 SELECT first_name,last_name
@@ -41,7 +75,7 @@ WHERE dept_name = 'IT'
 
 ![image-20241010111144674](./imgs/image-20241010111144674.png)
 
-##### 5. 查询入职日期在2020年之后的员工信息。
+### 1.5 查询入职日期在2020年之后的员工信息。
 
 ```mysql
 SELECT *
@@ -51,7 +85,7 @@ WHERE hire_date > '2019-12-31'
 
 ![image-20241010111419978](./imgs/image-20241010111419978.png)
 
-##### 6. 计算每个部门的平均工资。
+### 1.6 计算每个部门的平均工资。
 
 ```mysql
 SELECT dept_name,AVG(salary)
@@ -62,7 +96,7 @@ GROUP BY dept_id
 
 ![image-20241010111845231](./imgs/image-20241010111845231.png)
 
-##### 7. 查询工资最高的前3名员工信息。
+### 1.7 查询工资最高的前3名员工信息。
 
 ```mysql
 SELECT *
@@ -73,7 +107,7 @@ LIMIT 3
 
 ![image-20241010112128371](./imgs/image-20241010112128371.png)
 
-##### 8. 查询每个部门员工数量。
+### 1.8 查询每个部门员工数量。
 
 ```mysql
 SELECT dept_name,COUNT(*)
@@ -86,7 +120,7 @@ GROUP BY dept_id
 
 ![image-20241010112403106](./imgs/image-20241010112403106.png)
 
-##### 9. 查询没有分配部门的员工。
+### 1.9 查询没有分配部门的员工。
 
 ```mysql
 SELECT first_name,last_name
@@ -96,7 +130,7 @@ WHERE dept_id IS NULL
 
 ![image-20241010112532481](./imgs/image-20241010112532481.png)
 
-##### 10. 查询参与项目数量最多的员工。
+### 1.10 查询参与项目数量最多的员工。
 
 ```mysql
 SELECT first_name,last_name,COUNT(*)
@@ -115,7 +149,7 @@ HAVING COUNT(*) = (
 
 ![image-20241010122308288](./imgs/image-20241010122308288.png)
 
-##### 11. 计算所有员工的工资总和。
+### 1.11 计算所有员工的工资总和。
 
 ```mysql
 SELECT SUM(salary)
@@ -124,7 +158,7 @@ FROM employees
 
 ![image-20241010122519778](./imgs/image-20241010122519778.png)
 
-##### 12. 查询姓"Smith"的员工信息。
+### 1.12 查询姓"Smith"的员工信息。
 
 ```mysql
 SELECT *
@@ -134,7 +168,7 @@ WHERE last_name = 'Smith'
 
 ![image-20241010122731970](./imgs/image-20241010122731970.png)
 
-##### 13. 查询即将在半年内到期的项目。
+### 1.13 查询即将在半年内到期的项目。
 
 ```mysql
 SELECT project_name
@@ -144,7 +178,7 @@ WHERE DATEDIFF(end_date,start_date) < 188
 
 ![image-20241010123750570](./imgs/image-20241010123750570.png)
 
-##### 14. 查询至少参与了两个项目的员工。
+### 1.14 查询至少参与了两个项目的员工。
 
 ```mysql
 SELECT CONCAT(first_name," ",last_name) employee
@@ -156,7 +190,7 @@ HAVING COUNT(project_id) >= 2
 
 ![image-20241010124102425](./imgs/image-20241010124102425.png)
 
-##### 15. 查询没有参与任何项目的员工。
+### 1.15 查询没有参与任何项目的员工。
 
 ```mysql
 SELECT CONCAT(first_name," ",last_name) employee
@@ -169,7 +203,7 @@ WHERE emp_id NOT IN (
 
 ![image-20241010124326559](./imgs/image-20241010124326559.png)
 
-##### 16. 计算每个项目参与的员工数量。
+### 1.16 计算每个项目参与的员工数量。
 
 ```mysql
 SELECT project_name,COUNT(*) participant
@@ -180,7 +214,7 @@ GROUP BY project_id
 
 ![image-20241010124634914](./imgs/image-20241010124634914.png)
 
-##### 17. 查询工资第二高的员工信息。
+### 1.17 查询工资第二高的员工信息。
 
 ```mysql
 SELECT *
@@ -201,7 +235,7 @@ WHERE salary = (
 
 ![image-20241010125342244](./imgs/image-20241010125342244.png)
 
-##### 18. 查询每个部门工资最高的员工。
+### 1.18 查询每个部门工资最高的员工。
 
 ```mysql
 WITH rank_employee AS(
@@ -220,7 +254,7 @@ WHERE re.salary_rank = 1
 
 ![image-20241010144820531](./imgs/image-20241010144820531.png)
 
-##### 19. 计算每个部门的工资总和,并按照工资总和降序排列。
+### 1.19 计算每个部门的工资总和,并按照工资总和降序排列。
 
 ```mysql
 SELECT dept_name,SUM(salary)
@@ -232,7 +266,7 @@ ORDER BY SUM(salary) DESC
 
 ![image-20241010145052386](./imgs/image-20241010145052386.png)
 
-##### 20. 查询员工姓名、部门名称和工资。
+### 1.20 查询员工姓名、部门名称和工资。
 
 ```mysql
 SELECT CONCAT(first_name," ",last_name) employee_name, dept_name,salary
@@ -242,7 +276,7 @@ NATURAL JOIN departments
 
 ![image-20241010145245783](./imgs/image-20241010145245783.png)
 
-##### 21. 查询每个员工的上级主管(假设emp_id小的是上级)。
+### 1.21 查询每个员工的上级主管(假设emp_id小的是上级)。
 
 ```mysql
 SELECT CONCAT(e.first_name," ",e.last_name) employee_name,m.manager_name
@@ -255,7 +289,7 @@ WHERE e.dept_id =  m.dept_id AND
 
 ![image-20241010160228949](./imgs/image-20241010160228949.png)
 
-##### 22. 查询所有员工的工作岗位,不要重复。
+##### ### 1.22 查询所有员工的工作岗位,不要重复。
 
 ```mysql
 SELECT CONCAT(first_name," ",last_name) employee_name,job_title
@@ -264,7 +298,7 @@ FROM employees
 
 ![image-20241010153915827](./imgs/image-20241010153915827.png)
 
-##### 23. 查询平均工资最高的部门。
+### 1.23 查询平均工资最高的部门。
 
 ```mysql
 WITH departments_salary_rank AS(
@@ -285,7 +319,7 @@ WHERE dsr.salary_rank = 1
 
 ![image-20241010153941108](./imgs/image-20241010153941108.png)
 
-##### 24. 查询工资高于其所在部门平均工资的员工。
+### 1.24 查询工资高于其所在部门平均工资的员工。
 
 ```mysql
 SELECT CONCAT(first_name," ",last_name) employee_name
@@ -300,7 +334,7 @@ WHERE salary > avg_salary
 
 ![image-20241010154507323](./imgs/image-20241010154507323.png)
 
-##### 25. 查询每个部门工资前两名的员工。
+### 1.25 查询每个部门工资前两名的员工。
 
 ```mysql
 WITH ranked_employees AS(
@@ -317,9 +351,9 @@ WHERE re.salary_rank = 1
 
 ![image-20241010154851854](./imgs/image-20241010154851854.png)
 
-### 学生选课题
+## 二、学生选课题
 
-##### 1. 查询所有学生的信息。
+### 2.1 查询所有学生的信息。
 
 ```mysql
 SELECT *
@@ -328,7 +362,7 @@ FROM student
 
 ![image-20241010161113475](./imgs/image-20241010161113475.png)
 
-##### 2. 查询所有课程的信息。
+### 2.2 查询所有课程的信息。
 
 ```mysql
 SELECT *
@@ -337,7 +371,7 @@ FROM course
 
 ![image-20241010161312899](./imgs/image-20241010161312899.png)
 
-##### 3.查询所有学生的姓名、学号和班级。
+### 2.3 查询所有学生的姓名、学号和班级。
 
 ```mysql
 SELECT name,student_id,my_class
@@ -346,7 +380,7 @@ FROM student
 
 ![image-20241010161424319](./imgs/image-20241010161424319.png)
 
-##### 4. 查询所有教师的姓名和职称。
+### 2.4 查询所有教师的姓名和职称。
 
 ```mysql
 SELECT name,title
@@ -355,7 +389,7 @@ FROM teacher
 
 ![image-20241010161529441](./imgs/image-20241010161529441.png)
 
-##### 5. 查询不同课程的平均分数。
+### 2.5 查询不同课程的平均分数。
 
 ```mysql
 SELECT course_name,avg(score)
@@ -366,7 +400,7 @@ GROUP BY course.course_id
 
 ![image-20241010161715913](./imgs/image-20241010161715913.png)
 
-##### 6. 查询每个学生的平均分数。
+### 2.6 查询每个学生的平均分数。
 
 ```mysql
 SELECT name,AVG(score)
@@ -377,7 +411,7 @@ GROUP BY student_id
 
 ![image-20241010161833861](./imgs/image-20241010161833861.png)
 
-##### 7. 查询分数大于85分的学生学号和课程号。
+### 2.7 查询分数大于85分的学生学号和课程号。
 
 ```mysql
 SELECT student_id,course_id
@@ -387,7 +421,7 @@ WHERE score>85
 
 ![image-20241010161930901](./imgs/image-20241010161930901.png)
 
-##### 8. 查询每门课程的选课人数。
+### 2.8 查询每门课程的选课人数。
 
 ```mysql
 SELECT course_name,COUNT(*)
@@ -398,7 +432,7 @@ GROUP BY course_id
 
 ![image-20241010162523498](./imgs/image-20241010162523498.png)
 
-##### 9. 查询选修了"高等数学"课程的学生姓名和分数。
+### 2.9 查询选修了"高等数学"课程的学生姓名和分数。
 
 ```mysql
 SELECT name,score
@@ -410,7 +444,7 @@ WHERE course_name = "高等数学"
 
 ![image-20241010162723369](./imgs/image-20241010162723369.png)
 
-##### 10. 查询没有选修"大学物理"课程的学生姓名。
+### 2.10 查询没有选修"大学物理"课程的学生姓名。
 
 ```mysql
 SELECT name
@@ -426,7 +460,7 @@ WHERE s1.name NOT IN(
 
 ![image-20241010163019441](./imgs/image-20241010163019441.png)
 
-##### 11. 查询C001比C002课程成绩高的学生信息及课程分数。
+### 2.11 查询C001比C002课程成绩高的学生信息及课程分数。
 
 ```mysql
 SELECT student.*,c1.C001score ,c2.C002score
@@ -446,7 +480,7 @@ WHERE C1.C001score > C2.C002score
 
 ![image-20241010194743672](./imgs/image-20241010194743672.png)
 
-##### 12.统计各科成绩各分数段人数：课程编号，课程名称，[100-85]，[85-70]，[70-60]，[60-0] 及所占百分比
+### 2.12 统计各科成绩各分数段人数：课程编号，课程名称，[100-85]，[85-70]，[70-60]，[60-0] 及所占百分比
 
 ```mysql
 SELECT course_id,course_name,
@@ -466,7 +500,7 @@ GROUP BY course_id
 
 ![image-20241011083350589](./imgs/image-20241011083350589.png)
 
-##### 13. 查询选择C002课程但没选择C004课程的成绩情况(不存在时显示为 null )。
+### 2.13 查询选择C002课程但没选择C004课程的成绩情况(不存在时显示为 null )。
 
 ```mysql
 SELECT student_id,name,score
@@ -485,7 +519,7 @@ WHERE student_id IN(
 
 ![image-20241011081514765](./imgs/image-20241011081514765.png)
 
-##### 14. 查询平均分数最高的学生姓名和平均分数。
+### 2.14 查询平均分数最高的学生姓名和平均分数。
 
 ```mysql
 WITH ranked_student AS(
@@ -505,7 +539,7 @@ WHERE rs.score_rank = 1
 
 ![image-20241011082150873](./imgs/image-20241011082150873.png)
 
-##### 15. 查询总分最高的前三名学生的姓名和总分。
+### 2.15 查询总分最高的前三名学生的姓名和总分。
 
 ```mysql
 WITH ranked_student AS(
@@ -521,7 +555,8 @@ WHERE rs.score_rank <= 3
 
 ![image-20241011084707483](./imgs/image-20241011084707483.png)
 
-##### 16. 查询各科成绩最高分、最低分和平均分。要求如下：
+### 2.16 查询各科成绩最高分、最低分和平均分。要求如下：
+
 ##### 以如下形式显示：课程 ID，课程 name，最高分，最低分，平均分，及格率，中等率，优良率，优秀率
 #####  及格为>=60，中等为：70-80，优良为：80-90，优秀为：>=90
 ##### 要求输出课程号和选修人数，查询结果按人数降序排列，若人数相同，按课程号升序排列
@@ -547,7 +582,7 @@ ORDER BY number DESC,course_id
 
 ![image-20241011093009031](./imgs/image-20241011093009031.png)
 
-##### 17. 查询男生和女生的人数。
+### 2.17 查询男生和女生的人数。
 
 ```mysql
 SELECT gender,COUNT(*) number
@@ -557,7 +592,7 @@ GROUP BY gender
 
 ![image-20241011093123868](./imgs/image-20241011093123868.png)
 
-##### 18. 查询年龄最大的学生姓名。
+### 2.18 查询年龄最大的学生姓名。
 
 ```mysql
 WITH ranked_student AS(
@@ -572,7 +607,7 @@ WHERE rs.birthday_rank = 1
 
 ![image-20241011093351965](./imgs/image-20241011093351965.png)
 
-##### 19. 查询年龄最小的教师姓名。
+### 2.19 查询年龄最小的教师姓名。
 
 ```mysql
 WITH ranked_teacher AS(
@@ -587,7 +622,7 @@ WHERE rt.birthday_rank = 1
 
 ![image-20241011093552074](./imgs/image-20241011093552074.png)
 
-##### 20. 查询学过「张教授」授课的同学的信息。
+### 2.20 查询学过「张教授」授课的同学的信息。
 
 ```mysql
 SELECT student.*
@@ -600,7 +635,7 @@ WHERE t.name = "张教授"
 
 ![image-20241011093934087](./imgs/image-20241011093934087.png)
 
-##### 21. 查询查询至少有一门课与学号为"2021001"的同学所学相同的同学的信息 。
+### 2.21 查询查询至少有一门课与学号为"2021001"的同学所学相同的同学的信息 。
 
 ```mysql
 SELECT student.*
@@ -615,7 +650,7 @@ WHERE course_id IN (
 
 ![image-20241011094337495](./imgs/image-20241011094337495.png)
 
-##### 22. 查询每门课程的平均分数，并按平均分数降序排列。
+### 2.22 查询每门课程的平均分数，并按平均分数降序排列。
 
 ```mysql
 SELECT course_name,AVG(score) avg_score
@@ -627,7 +662,7 @@ ORDER BY AVG(score) DESC
 
 ![image-20241011094458814](./imgs/image-20241011094458814.png)
 
-##### 23. 查询学号为"2021001"的学生所有课程的分数。
+### 2.23 查询学号为"2021001"的学生所有课程的分数。
 
 ```mysql
 SELECT course_name,score
@@ -639,7 +674,7 @@ WHERE student_id = "2021001"
 
 ![image-20241011094618196](./imgs/image-20241011094618196.png)
 
-##### 24. 查询所有学生的姓名、选修的课程名称和分数。
+### 2.24 查询所有学生的姓名、选修的课程名称和分数。
 
 ```mysql
 SELECT name,course_name,score
@@ -650,7 +685,7 @@ NATURAL JOIN student
 
 ![image-20241011094759526](./imgs/image-20241011094759526.png)
 
-##### 25. 查询每个教师所教授课程的平均分数。
+### 2.25 查询每个教师所教授课程的平均分数。
 
 ```mysql
 SELECT teacher_id,AVG(score) avg_score
@@ -661,7 +696,7 @@ GROUP BY teacher_id
 
 ![image-20241011095821994](./imgs/image-20241011095821994.png)
 
-##### 26. 查询分数在80到90之间的学生姓名和课程名称。
+### 2.26 查询分数在80到90之间的学生姓名和课程名称。
 
 ```mysql
 SELECT name,course_name
@@ -673,7 +708,7 @@ WHERE score BETWEEN 80 AND 90
 
 ![image-20241011095925962](./imgs/image-20241011095925962.png)
 
-##### 27. 查询每个班级的平均分数。
+### 2.27 查询每个班级的平均分数。
 
 ```mysql
 SELECT my_class class,ROUND(AVG(score),2) avg_score
@@ -684,7 +719,7 @@ GROUP BY my_class
 
 ![image-20241011100049381](./imgs/image-20241011100049381.png)
 
-##### 28. 查询没学过"王讲师"老师讲授的任一门课程的学生姓名。
+### 2.28 查询没学过"王讲师"老师讲授的任一门课程的学生姓名。
 
 ```mysql
 SELECT name
@@ -700,7 +735,7 @@ WHERE student_id NOT IN(
 
 ![image-20241011100234567](./imgs/image-20241011100234567.png)
 
-##### 29. 查询两门及其以上小于85分的同学的学号，姓名及其平均成绩 。
+### 2.29 查询两门及其以上小于85分的同学的学号，姓名及其平均成绩 。
 
 ```mysql
 SELECT student_id,name,AVG(score)
@@ -712,7 +747,7 @@ HAVING COUNT(CASE WHEN score<85 THEN 1 ELSE 0 END) > 2
 
 ![image-20241011100438320](./imgs/image-20241011100438320.png)
 
-##### 30. 查询所有学生的总分并按降序排列。
+### 2.30 查询所有学生的总分并按降序排列。
 
 ```mysql
 SELECT student_id,SUM(score) total_score
@@ -723,7 +758,7 @@ ORDER BY SUM(score) DESC
 
 ![image-20241011100554698](./imgs/image-20241011100554698.png)
 
-##### 31. 查询平均分数超过85分的课程名称。
+### 2.31 查询平均分数超过85分的课程名称。
 
 ```mysql
 SELECT course_name
@@ -735,7 +770,7 @@ HAVING AVG(score)>85
 
 ![image-20241011100649690](./imgs/image-20241011100649690.png)
 
-##### 32. 查询每个学生的平均成绩排名。
+### 2.32 查询每个学生的平均成绩排名。
 
 ```mysql
 WITH ranked_student AS(
@@ -749,7 +784,7 @@ FROM ranked_student
 
 ![image-20241011100952049](./imgs/image-20241011100952049.png)
 
-##### 33. 查询每门课程分数最高的学生姓名和分数。
+### 2.33 查询每门课程分数最高的学生姓名和分数。
 
 ```mysql
 WITH ranked_student AS(
@@ -767,7 +802,7 @@ WHERE rs.score_rank = 1
 
 ![image-20241011101301883](./imgs/image-20241011101301883.png)
 
-##### 34. 查询选修了"高等数学"和"大学物理"的学生姓名。
+### 2.34 查询选修了"高等数学"和"大学物理"的学生姓名。
 
 ```mysql
 SELECT `name`
@@ -786,7 +821,7 @@ WHERE course_name = "高等数学" AND
 
 ![image-20241011101638134](./imgs/image-20241011101638134.png)
 
-##### 35. 按平均成绩从高到低显示所有学生的所有课程的成绩以及平均成绩（没有选课则为空）。
+### 2.35 按平均成绩从高到低显示所有学生的所有课程的成绩以及平均成绩（没有选课则为空）。
 
 ```mysql
 SELECT student_id,course_id,score,AVG(score) course_avg
@@ -797,7 +832,7 @@ ORDER BY AVG(score) DESC
 
 ![image-20241011102923633](./imgs/image-20241011102923633.png)
 
-##### 36. 查询分数最高和最低的学生姓名及其分数。
+### 2.36 查询分数最高和最低的学生姓名及其分数。
 
 ```mysql
 WITH ranked_student AS(
@@ -815,7 +850,7 @@ WHERE rs.score_rank_high = 1 OR rs.score_rank_low = 1
 
 ![image-20241011103837431](./imgs/image-20241011103837431.png)
 
-##### 37. 查询每个班级的最高分和最低分。
+### 2.37 查询每个班级的最高分和最低分。
 
 ```mysql
 SELECT my_class class,MAX(score) highest_score,MIN(score) lowest_score
@@ -826,7 +861,7 @@ GROUP BY my_class
 
 ![image-20241011104039236](./imgs/image-20241011104039236.png)
 
-##### 38. 查询每门课程的优秀率（优秀为90分）。
+### 2.38 查询每门课程的优秀率（优秀为90分）。
 
 ```mysql
 SELECT course_id,ROUND(sum(CASE WHEN score>=90 THEN 1 ELSE 0 END)/count(*)*100,2) excellent_rate
@@ -836,7 +871,7 @@ GROUP BY course_id
 
 ![image-20241011104254327](./imgs/image-20241011104254327.png)
 
-##### 39. 查询平均分数超过班级平均分数的学生。
+### 2.39 查询平均分数超过班级平均分数的学生。
 
 ```mysql
 SELECT name,score
@@ -850,7 +885,7 @@ HAVING score > avg(score)
 
 ![image-20241011104644499](./imgs/image-20241011104644499.png)
 
-##### 40. 查询每个学生的分数及其与课程平均分的差值。
+### 2.40 查询每个学生的分数及其与课程平均分的差值。
 
 ```mysql
 SELECT student_id,s1.course_id,ROUND(score-avg_score,2) diff
